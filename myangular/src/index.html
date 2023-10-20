@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+
+
+<html ng-app="myApp">
+
+
+
+<head>
+
+
+
+    <title>AngularJS CRUD Example</title>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+
+
+    <script src="app.js"></script>
+
+
+
+    <script src="myController.js"></script>
+
+
+
+    <script src="myService.js"></script>
+
+
+
+
+
+
+
+</head>
+
+
+
+<body ng-controller="myController">
+
+
+
+    <h1>AngularJS CRUD Example</h1>
+
+
+
+
+
+
+
+    <!-- Display a list of items -->
+
+
+
+    <ul>
+
+
+
+        <li ng-repeat="item in items">
+
+
+
+            {{ item.name }} - {{ item.title }}
+
+
+
+            <button ng-click="editItem(item)">Edit</button>
+
+
+
+            <button ng-click="deleteItem(item)">Delete</button>
+
+
+
+        </li>
+
+
+
+    </ul>
+
+
+
+
+
+
+
+    <!-- Form for adding and editing items -->
+
+
+
+    <form ng-submit="saveItem()">
+
+
+
+        <label>Name:</label>
+
+
+
+        <input type="text" ng-model="currentItem.name" required><br>
+
+
+
+        <label>Description:</label>
+
+
+
+        <input type="text" ng-model="currentItem.description" required><br>
+
+
+
+        <button type="submit">Save</button>
+
+
+
+    </form>
+
+
+
+</body>
+
+
+
+</html>
